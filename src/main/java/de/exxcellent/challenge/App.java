@@ -1,4 +1,4 @@
-package de.exxcellent.challenge;
+package main.java.de.exxcellent.challenge;
 
 /**
  * The entry class for your solution. This class is only aimed as starting point and not intended as baseline for your software
@@ -17,5 +17,6 @@ public final class App {
 
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
         System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallesGoalSpread);
+        System.out.println("Test");
     }
 }

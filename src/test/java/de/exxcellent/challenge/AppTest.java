@@ -1,4 +1,4 @@
-package de.exxcellent.challenge;
+package test.java.de.exxcellent.challenge;
 
 import org.junit.Assert;
 import org.junit.Before;
