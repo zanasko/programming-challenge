@@ -65,8 +65,6 @@ public class Weather {
 				String day = csvRecord.get(0);
 				String maxTemp = csvRecord.get(1);
 				String minTemp = csvRecord.get(2);
-				//System.out.println(day);
-				//System.out.println(day);
 				outputResult(day, maxTemp, minTemp);
 			}
 		
