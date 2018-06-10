@@ -1,4 +1,4 @@
-package solutionWeather;
+package solution;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -15,7 +15,7 @@ public class Weather {
 	private double minDifference = Double.POSITIVE_INFINITY;
 	
 
-	public String getResult(String csvFilePath) throws IOException {
+	public String dayWithSmallestTempSpread(String csvFilePath) throws IOException {
 		readCSVWeatherData(csvFilePath);
 		return getDay();
 	}
