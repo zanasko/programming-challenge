@@ -1,8 +1,10 @@
 package main.java.de.exxcellent.challenge;
-import main.resources.de.exxcellent.challenge.*;
-import solution.Weather;
+import solution.WeatherAnalysis;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
+import org.apache.commons.csv.CSVRecord;
 
 /**
  * The entry class for your solution. This class is only aimed as starting point and not intended as baseline for your software
@@ -14,11 +16,16 @@ public final class App {
 
     public static void main(String... args) throws IOException {
 
-    	Weather weather = new Weather();
-    	Football football = new Football();
+    	WeatherAnalysis weatherAnalysis = new WeatherAnalysis();
+    	String filePathWetterData = "src/main/resources/de/exxcellent/challenge/weather.csv";
+		ArrayList<CSVRecord> weatherData = weatherAnalysis.readCSVData(filePathWetterData);
+		
+		String filePathFootballData = "src/main/resources/de/exxcellent/challenge/football.csv";
+		ArrayList<CSVRecord> footballData = weatherAnalysis.readCSVData(filePathFootballData);
+ 
 
-        String dayWithSmallestTempSpread = weather.dayWithSmallestTempSpread("src/main/resources/de/exxcellent/challenge/weather.csv");
-        String teamWithSmallesGoalSpread = football.teamWithSmallesGoalSpread("src/main/resources/de/exxcellent/challenge/football.csv");
+        String dayWithSmallestTempSpread = weatherAnalysis.calculateMinTempDifference(weatherData, "Day", "MxT", "MnT");	
+        String teamWithSmallesGoalSpread = weatherAnalysis.calculateMinTempDifference(footballData, "Team", "Goals", "Goals Allowed");
 
         System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
         System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallesGoalSpread);
